@@ -1,0 +1,28 @@
+<div class="flex flex-col">
+    <h1 class="flex align-middle py-5 px-10">Workout Data</h1>
+    <div class="-m-1.5 overflow-x-auto">
+      <div class="p-1.5 min-w-full inline-block align-middle">
+        <div class="overflow-hidden">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead>
+              <tr>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase" mat-sort-header>User</th>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase" mat-sort-header>Workout</th>
+                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase" mat-sort-header>Time (in minutes)</th>
+
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr *ngFor="let item of userArr">
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{{item.username}}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{item.workout}}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{item.time}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <dui-paginator [length]="50" [pageSize]="5"></dui-paginator>
+        </div>
+        
+      </div>
+    </div>
+  </div>
